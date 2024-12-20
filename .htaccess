@@ -1,0 +1,20 @@
+RewriteEngine On
+
+# Redirect to HTTPS and www
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^ https://www.antenna2.net%{REQUEST_URI} [R=301,L]
+
+# Redirect index.html to same level directory 
+RewriteRule ^(.*/)?index\.html$ /$1 [R=301,L]
+
+# Redirect pages in subdirs under "cebik/content/a10/" back one level
+RewriteRule ^cebik/content/a10/([^/]+)/(.*)$ /cebik/content/$1/$2 [L,R=301]
+
+# Misc redirects
+RewriteRule ^cebik/books/$ /cebik/content/bookant.html [L,R=301]
+
+# Turn off 404 suggestions
+Options -MultiViews
+CheckSpelling off
+
