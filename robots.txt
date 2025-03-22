@@ -2,4 +2,5 @@ User-agent: *
 Disallow: /cebik/books/*.pdf$
 Disallow: /cebik/magazines/*.pdf$
 Disallow: /reports/
+Disallow: /interior/
 Sitemap: https://www.antenna2.net/sitemap.xml
